@@ -1,25 +1,25 @@
-use crate::components::list_item::ListItem;
+use crate::components::list_item::ListItemView;
 use yew::prelude::*;
 use yewdux::prelude::*;
 
-use crate::store::Store;
+use crate::store::{List, ListItem, Store};
 
 #[derive(Debug, PartialEq, Properties)]
 pub struct Props {
-    pub id: usize,
+    pub id: String,
 }
 
 #[function_component]
 pub fn ListView(props: &Props) -> Html {
     let (store, dispatch) = use_store::<Store>();
-    let list = &store.lists[props.id];
+    let list = &store.list_map[&props.id];
 
     html! {
         <div class="container mx-auto">
-            <h1 class="font-bold">{list.name.clone()}</h1>
-            {list.items.clone().into_iter().map(|item| {
+            <h1 class="font-bold">{&list.name}</h1>
+            {list.items.iter().map(|item: &ListItem | {
                 html! {
-                    <ListItem name={item.text.clone()}/>
+                    <ListItemView name={item.text.clone()}/>
                 }
             }).collect::<Html>()}
         </div>
