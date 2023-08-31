@@ -10,6 +10,7 @@ use gloo_console::log;
 use gloo_net::http::Request;
 use std::collections::HashMap;
 use wasm_bindgen::JsValue;
+use yew_hooks::prelude::*;
 
 #[derive(Debug, PartialEq, Properties)]
 pub struct Props {}
@@ -33,27 +34,40 @@ pub fn NewListView(props: &Props) -> Html {
         })
     };
 
-    let handle_add = {
+    let handle_add = |text: &UseStateHandle<String>,
+                      list: &UseStateHandle<Vec<ListItem>>,
+                      text_input_ref: &NodeRef| {
+        // Add new item to list
+        let mut new_list = list.to_vec().clone();
+        new_list.push(ListItem {
+            text: text.to_string(),
+        });
+        list.set(new_list);
+
+        // Clean input and state
+        let text_input = text_input_ref.cast::<HtmlInputElement>().unwrap();
+        text_input.set_value("");
+        text.set(String::new());
+    };
+
+    let handle_add_click = {
         let text = text.clone();
         let list = list.clone();
         let text_input_ref = text_input_ref.clone();
-
-        Callback::from(move |_| {
-            // Add new item to list
-            let mut new_list = list.to_vec().clone();
-            new_list.push(ListItem {
-                text: text.to_string(),
-            });
-            list.set(new_list);
-
-            // Clean input and state
-            let text_input = text_input_ref.cast::<HtmlInputElement>().unwrap();
-            text_input.set_value("");
-            text.set(String::new());
-        })
+        Callback::from(move |_| handle_add(&text, &list, &text_input_ref))
     };
 
-    log!(JsValue::from(text.to_string()));
+    let handle_add_enter = {
+        let text = text.clone();
+        let list = list.clone();
+        let text_input_ref = text_input_ref.clone();
+        move |e: KeyboardEvent| {
+            if e.key() == "Enter" {
+                handle_add(&text, &list, &text_input_ref);
+            }
+        }
+    };
+    use_event_with_window("keypress", handle_add_enter);
 
     html! {
         <div class="container mx-auto">
@@ -73,12 +87,20 @@ pub fn NewListView(props: &Props) -> Html {
                         />
                         <button
                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-20"
-                            onclick={handle_add}
+                            onclick={handle_add_click.clone()}
                         >
                             {"Add"}
                         </button>
                     </div>
                 </div>
+                <div class="mt-8 block max-w-none p-6 bg-white  justify-center flex">
+                    <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-30"
+                    >
+                        {"Submit"}
+                    </button>
+                </div>
+
         </div>
     }
 }
