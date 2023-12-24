@@ -3,7 +3,6 @@ import ListProvider from './context/listContext'
 import ListIndex from './containers/ListIndex'
 import List from './containers/List'
 import NewList from './containers/NewList'
-// import AddList from './components/AddList'
 import './index.css'
 import {
   createBrowserRouter,

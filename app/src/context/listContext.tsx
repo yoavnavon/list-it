@@ -8,7 +8,6 @@ interface Props {
 }
 
 const ListProvider: React.FC<Props> = ({ children }) => {
-    // const TodoProvider: React.FC<React.ReactNode> = ({ children }) => {
     const [lists, setLists] = React.useState<IList[]>([
         {
             _id: { $oid: "0" },
