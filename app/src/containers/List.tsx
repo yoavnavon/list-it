@@ -2,9 +2,9 @@ import * as React from 'react';
 import { IList, IListItem, Content } from '../@types/list';
 import { isTextType, isImageType, isListType } from '../@types/guards';
 import { ListContext } from '../context/listContext';
-import TextItem from '../components/ListItem/TextItem';
-import ImageItem from '../components/ListItem/ImageItem';
-import ListItem from '../components/ListItem/ListItem';
+import TextItem from '../components/Item/TextItem';
+import ImageItem from '../components/Item/ImageItem';
+import ListItem from '../components/Item/ListItem';
 
 import {
     Outlet,

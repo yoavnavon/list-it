@@ -3,9 +3,9 @@ import { useState, useRef, useEffect } from 'react';
 import { ListContextType, IList, IListItem, Content, IImageContent, ITextContent, IListContent } from '../@types/list';
 import { isTextType, isImageType, isListType } from '../@types/guards';
 import { ListContext } from '../context/listContext';
-import TextItem from '../components/ListItem/TextItem';
-import ImageItem from '../components/ListItem/ImageItem';
-import ListItem from '../components/ListItem/ListItem';
+import TextItem from '../components/Item/TextItem';
+import ImageItem from '../components/Item/ImageItem';
+import ListItem from '../components/Item/ListItem';
 import { TextInput, ImageInput, ListInput, PlaceInput } from '../components/NewListItem/Inputs'
 import SubmitButton from '../components/SubmitButton';
 import { useNavigate } from "react-router-dom";
