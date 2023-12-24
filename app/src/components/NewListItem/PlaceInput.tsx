@@ -73,7 +73,7 @@ const PlaceInput: React.FC<Props> = ({ handle_item_type, itemType, handle_add, s
             </div>
             <div style={{ height: '100vh', width: '100%' }}>
                 <LoadScript
-                    googleMapsApiKey='AIzaSyD64HoNmVXd4Is4c_zw7XKiZxaT4Zyi7lg' // TODO: Update with new key
+                    googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY as string}
                     libraries={LIBRARIES}
                 >
                     <GoogleMap

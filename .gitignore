@@ -1,7 +1,9 @@
+# General
+**.env
+
 # Api
 api/target
 api/dist
-api/.env
 
 # App
 
