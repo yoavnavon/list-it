@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IListItem, ITextContent } from '../../@types/list';
+import { IListItem, ITextContent } from '../../customTypes/list';
 
 type Props = {
     item: IListItem<ITextContent>;

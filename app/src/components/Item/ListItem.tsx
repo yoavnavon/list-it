@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { IListItem, IListContent } from '../../@types/list';
+import { IListItem, IListContent } from '../../customTypes/list';
 import { Outlet, Link } from "react-router-dom";
-import { isTextType, isImageType, isListType } from '../../@types/guards';
+import { isTextType, isImageType, isListType } from '../../customTypes/guards';
 import TextItem from './TextItem';
 import ImageItem from './ImageItem';
 

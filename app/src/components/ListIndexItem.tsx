@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IList } from '../@types/list';
+import { IList } from '../customTypes/list';
 import { Outlet, Link } from "react-router-dom";
 
 type Props = {

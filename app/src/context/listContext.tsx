@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ListContextType, IList } from '../@types/list';
+import { ListContextType, IList } from '../customTypes/list';
 
 export const ListContext = React.createContext<ListContextType | null>(null);
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IListItem } from '../@types/list';
+import { IListItem } from '../customTypes/list';
 
 type Props = {
     handle_submit: () => Promise<void>

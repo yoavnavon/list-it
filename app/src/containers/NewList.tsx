@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useRef, useEffect } from 'react';
-import { ListContextType, IList, IListItem, Content, IImageContent, ITextContent, IListContent } from '../@types/list';
-import { isTextType, isImageType, isListType } from '../@types/guards';
+import { ListContextType, IList, IListItem, Content, IImageContent, ITextContent, IListContent } from '../customTypes/list';
+import { isTextType, isImageType, isListType } from '../customTypes/guards';
 import { ListContext } from '../context/listContext';
 import TextItem from '../components/Item/TextItem';
 import ImageItem from '../components/Item/ImageItem';

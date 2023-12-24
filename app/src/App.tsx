@@ -8,7 +8,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { IList } from './@types/list';
+import { IList } from './customTypes/list';
 
 
 

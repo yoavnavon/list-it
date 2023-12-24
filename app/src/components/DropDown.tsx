@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { IOption } from '../@types/option';
+import { IOption } from '../customTypes/option';
 
 type Props = {
     // handle_input: (event: React.ChangeEvent<HTMLInputElement>) => void

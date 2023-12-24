@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, useCallback, useRef } from 'react'
 import DropDown from '../DropDown';
 import ItemTypes from '../../constants'
-import IPlace from '../../@types/place'
+import IPlace from '../../customTypes/place'
 
 import { GoogleMap, LoadScript, Marker, InfoWindow, } from '@react-google-maps/api';
 import type { Libraries } from '@googlemaps/js-api-loader';

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import DropDown from '../DropDown';
 import { useState, useRef, useEffect } from 'react';
-import { IList } from '../../@types/list';
+import { IList } from '../../customTypes/list';
 import ItemTypes from '../../constants'
 
 type Props = {

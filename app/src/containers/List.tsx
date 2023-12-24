@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { IList, IListItem, Content } from '../@types/list';
-import { isTextType, isImageType, isListType } from '../@types/guards';
+import { IList, IListItem, Content } from '../customTypes/list';
+import { isTextType, isImageType, isListType } from '../customTypes/guards';
 import { ListContext } from '../context/listContext';
 import TextItem from '../components/Item/TextItem';
 import ImageItem from '../components/Item/ImageItem';
